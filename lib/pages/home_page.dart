@@ -1,19 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'dart:convert';
 import 'package:six_app/widgets/drawer.dart';
 import 'package:six_app/widgets/item_widget.dart';
+import 'package:six_app/models/catalog.dart';
 
-import '../models/catelog.dart';
-
-
-
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final int days =30;
+
   final  String name = "sudarshan";
 
 
+
   @override
+  void  initState (){
+    super.initState();
+    loadData();
+
+  }
+  loadData()async{
+    var catalogJson = await rootBundle.loadString("asset/files/catalog.json");
+    var decodeData = jsonDecode(source)
+
+
+
+  }
   Widget build(BuildContext context) {
     final dummyList = List.generate(20, (index) =>CatalogModel.items[0]);
 
@@ -25,11 +43,10 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body:  Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16.0),
         child: ListView.builder(
-            itemCount:dummyList.length,
+            itemCount:CatalogModel.items.length,
             itemBuilder: (context,index){
-
               return ItemWidget(
               item:dummyList[index], key: null,
               );
@@ -40,7 +57,7 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-//gulshan yadav
+
 
 
 

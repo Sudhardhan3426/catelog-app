@@ -22,9 +22,7 @@ void main() {
 
         themeMode: ThemeMode.light,
         debugShowCheckedModeBanner: false,
-
         theme: MyTheme.lightTheme(context),
-
         darkTheme: MyTheme.lightTheme(context),
         initialRoute: MyRoutes.homeRoute,
         routes:  {
