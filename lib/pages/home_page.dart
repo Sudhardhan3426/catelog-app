@@ -25,11 +25,15 @@ class _HomePageState extends State<HomePage> {
     loadData();
 
   }
+<<<<<<< HEAD
   loadData()async{
     var catalogJson = await rootBundle.loadString("asset/files/catalog.json");
     var decodeData = jsonDecode(source)
 
 
+=======
+  loadData(){
+>>>>>>> origin/day_13
 
   }
   Widget build(BuildContext context) {
