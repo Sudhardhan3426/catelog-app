@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'package:six_app/models/catelog.dart';
+import 'package:six_app/models/catalog.dart';
 
 
 class ItemWidget extends StatelessWidget {
    final Item item;
 
-   const ItemWidget({required Key key,required this.item})
-       : assert(item != null),
+   const ItemWidget({required Key key,required this.item}):
+         assert(item != null),
         super(key: key);
 
 
@@ -17,8 +17,12 @@ class ItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
+        onTap: (){
+          print("${item.name}pressed");
+        },
         leading: Image.network(item.image),
         title: Text(item.name),
+
         subtitle: Text(item.desc),
         trailing: Text(""
             "\$${item.price}",
