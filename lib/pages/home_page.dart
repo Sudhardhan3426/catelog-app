@@ -17,6 +17,10 @@ class _HomePageState extends State<HomePage> {
 
   final  String name = "sudarshan";
 
+  String? get source => null;
+
+  get key => null;
+
 
 
   @override
@@ -25,15 +29,10 @@ class _HomePageState extends State<HomePage> {
     loadData();
 
   }
-<<<<<<< HEAD
+
   loadData()async{
     var catalogJson = await rootBundle.loadString("asset/files/catalog.json");
-    var decodeData = jsonDecode(source)
-
-
-=======
-  loadData(){
->>>>>>> origin/day_13
+    var decodeData = jsonDecode(source!);
 
   }
   Widget build(BuildContext context) {
@@ -51,13 +50,11 @@ class _HomePageState extends State<HomePage> {
         child: ListView.builder(
             itemCount:CatalogModel.items.length,
             itemBuilder: (context,index){
-              return ItemWidget(
-              item:dummyList[index], key: null,
-              );
+              return ItemWidget(key: key, item:dummyList[index]);
            },
          ),
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
     );
   }
 }
