@@ -24,7 +24,7 @@ void main() {
         debugShowCheckedModeBanner: false,
         theme: MyTheme.lightTheme(context),
         darkTheme: MyTheme.lightTheme(context),
-        initialRoute: MyRoutes.homeRoute,
+        initialRoute: MyRoutes.loginRoute,
         routes:  {
           "/": (context)=> LoginPage(),
           MyRoutes.homeRoute:(context)=>HomePage(),

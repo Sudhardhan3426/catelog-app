@@ -20,7 +20,8 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         changeButton = true;
       });
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 1));
+      // ignore: use_build_context_synchronously
       await Navigator.pushNamed(
           context, MyRoutes.homeRoute);
       setState(() {
@@ -43,29 +44,29 @@ class _LoginPageState extends State<LoginPage> {
                 height: 300,
 
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15.0,
               ),
               Text(
                 "Welcome $name",
-                style: TextStyle(
+                style: const TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
 
               ),
-              Padding(
+              const Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: 16.0,horizontal: 32.0,
                   ),
               ),
               TextFormField(
-                obscureText: true,
 
-                decoration: InputDecoration(
+
+                decoration: const InputDecoration(
 
                   hintText: "EnterUserName",
                   labelText: "UserName",
@@ -77,25 +78,22 @@ class _LoginPageState extends State<LoginPage> {
                   }
                   return null;
                 },
-                onChanged: (value){
-                  name =value;
-                  setState(() {
-                  });
-                },
+
               ),
               TextFormField(
-                decoration: InputDecoration(
-                    hintText: "EnterPassward",
-                    labelText: "Passward",
+                obscureText: true,
+                decoration: const InputDecoration(
+                    hintText: "EnterPassword",
+                    labelText: "Password",
                 ),
                 validator: (value){
                   if(value != null && value.isEmpty){
-                    return "Passward cannot be empty";
+                    return "Password cannot be empty";
                   }
                   return null;
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
              Material(
@@ -114,11 +112,11 @@ class _LoginPageState extends State<LoginPage> {
 
                    alignment: Alignment.center,
                    child:changeButton
-                   ? Icon(
+                   ? const Icon(
                      Icons.done,
                      color: Colors.white,
                    )
-                   : Text(
+                   : const Text(
                      "Login",
                      style: TextStyle(
                        color: Colors.white,
